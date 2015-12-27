@@ -1,0 +1,16 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bundle.js",
+  "devDependencies": {
+    "react": "=0.14.3",
+    "react-dom": "=0.14.3",
+    "reactify": "=1.1.1"
+  },
+  "scripts": {
+    "build": "browserify --debug -t [reactify --es6] src/entry.js > bundle.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
