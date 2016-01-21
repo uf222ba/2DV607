@@ -7,9 +7,11 @@ import Namelist from './namelist';
 export default class NamelistEditor extends Component {
     render() {
         return (
-            <AddText />
-            //<ShowChars /> This doesn't work
-            //<Namelist /> This doesn't work
+            <div>
+                <AddText />
+                <ShowChars />
+                <Namelist />
+            </div>
         );
     }
 }
