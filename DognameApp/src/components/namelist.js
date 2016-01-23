@@ -5,13 +5,18 @@ import ListItem from './listitem';
 
 
 export default class Namelist extends Component {
+    renderList() {
+        return this.props.names.map((name) => {
+            return (
+                <ListGroupItem key={name.name}>{name.name}</ListGroupItem>
+            );
+        });
+    }
 
     render() {
         return (
             <ListGroup>
-                <ListGroupItem>Item 1</ListGroupItem>
-                <ListGroupItem>Item 2</ListGroupItem>
-                <ListGroupItem>...</ListGroupItem>
+                {this.renderList()}
             </ListGroup>
         );
     }

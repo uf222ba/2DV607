@@ -16,6 +16,8 @@ import AddText from './add-text';
 import List from './namelist';
 import NamelistEditor from './namelist-editor';
 import Namelist from './namelist';
+import Litterlist from './litterlist';
+import KennelName from './kennel-name';
 
 export default class App extends Component {
   render() {
@@ -26,27 +28,18 @@ export default class App extends Component {
             </Row>
             <Row>
                 <Col>
-                    <AddText />
+                    <KennelName />
                     <hr />
                 </Col>
             </Row>
             <Row className="show-grid">
                 <Col>
-                    <AddText />
+                    <AddText label="Litter Name" btnText="Add"/>
                 </Col>
             </Row>
             <Row>
                 <Col>
-                    <Tabs defaultActiveKey={2} position="left" tabWidth={3}>
-                        <Tab eventKey={1} title="A-litter">
-                            <NamelistEditor />
-                        </Tab>
-                        <Tab eventKey={2} title="B-litter">
-                            <Input label="Name" type="text" bsSize="small" /><Button>Add</Button>
-
-                        </Tab>
-                        <Tab eventKey={3} title="C-litter" disabled>Tab 3 content</Tab>
-                    </Tabs>
+                    <Litterlist />
                 </Col>
             </Row>
         </Grid>

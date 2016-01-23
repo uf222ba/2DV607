@@ -9,15 +9,15 @@ export default class AddText extends Component {
             <Navbar>
                 <Navbar.Header>
                     <Navbar.Brand>
-                        <a href="#">Kennel name</a>
+                        <a href="#">{this.props.label}</a>
                     </Navbar.Brand>
                     <Navbar.Toggle />
                 </Navbar.Header>
                 <Navbar.Collapse>
                     <Navbar.Form pullLeft>
-                        <Input type="text" placeholder="Kennel name"/>
+                        <Input type="text" placeholder={this.props.placeholder} value={this.props.value} />
                         {' '}
-                        <Button type="submit">Save</Button>
+                        <Button type="submit">{this.props.btnText}</Button>
                     </Navbar.Form>
                 </Navbar.Collapse>
             </Navbar>
