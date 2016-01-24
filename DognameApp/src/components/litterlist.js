@@ -1,8 +1,11 @@
 import React from 'react';
-import {Component} from 'react';
+import { Component } from 'react';
 import { connect } from 'react-redux';
+import { selectLitter } from '../actions/index';
+import { bindActionCreators } from 'redux';
 import {Tabs} from 'react-bootstrap';
 import {Tab} from 'react-bootstrap';
+import {Button} from 'react-bootstrap';
 
 import NamelistEditor from './namelist-editor';
 
@@ -11,18 +14,20 @@ class Litterlist extends Component {
         var i = 1;
         return this.props.litters.map((litter) => {
             return (
-                <Tab key={i} eventKey={i++} title={litter.litter}>
-                    <NamelistEditor names={litter.names} />
-                </Tab>
+                <li onClick={() => this.props.selectLitter(litter)}
+                    key={litter.litter}
+                    className="list-group-item">
+                    {litter.litter}
+                </li>
             );
         });
     }
 
     render() {
         return (
-            <Tabs defaultActiveKey={1} position="left" tabWidth={3}>
+            <ul className="col-xs-3 nav nav-pills nav-stacked">
                 {this.renderList()}
-            </Tabs>
+            </ul>
         );
     }
 }
@@ -33,4 +38,8 @@ function mapStateToProps(state) {
     };
 }
 
-export default connect(mapStateToProps)(Litterlist);
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators({ selectLitter: selectLitter }, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Litterlist);

@@ -41,6 +41,10 @@ export default class App extends Component {
                 <Col>
                     <Litterlist />
                 </Col>
+                <Col xs={9}>
+                    <NamelistEditor />
+                </Col>
+
             </Row>
         </Grid>
 
